@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: server-cluster-ip-service #cluster of server pods
+spec:
+  type: ClusterIP
+  selector:
+    component: server  
+  ports:
+    - port: 5000 # Other port that needs comunicate with server-cluster-ip-service
+      targetPort: 5000 # Port that needs server-cluster-ip-service Service to comunicate with server pods
+      
+

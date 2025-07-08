@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-cluster-ip-service #cluster of redis pods
+spec:
+  type: ClusterIP
+  selector:
+    component: redis  
+  ports:
+    - port: 6379 # Other port that needs comunicate with redis-cluster-ip-service
+      targetPort: 6379 # Port that needs redis-cluster-ip-service Service to comunicate with redis pods
+      
+
