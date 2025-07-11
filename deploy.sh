@@ -1,6 +1,6 @@
-docker build -t 040772/multi-client:latest -t 040772/multi-client:$SHA ./client/Dockerfile ./client
-docker build -t 040772/multi-server:latest -t 040772/multi-server:$SHA ./server/Dockerfile ./server
-docker build -t 040772/multi-worker:latest -t 040772/multi-worker:$SHA ./worker/Dockerfile ./worker
+docker build -t 040772/multi-client:latest -t 040772/multi-client:$SHA -f ./client/Dockerfile ./client
+docker build -t 040772/multi-server:latest -t 040772/multi-server:$SHA -f ./server/Dockerfile ./server
+docker build -t 040772/multi-worker:latest -t 040772/multi-worker:$SHA -f ./worker/Dockerfile ./worker
 
 docker push 040772/multi-client:latest 
 docker push 040772/multi-server:latest 
